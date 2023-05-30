@@ -19,14 +19,14 @@
         },
         extend: {
             colors: {
-                travvlyLightYellow: '#FFFBEE',
-                travvlyLintYellow: '#FFF9E9',
-                travvlyBlue: '#2B6BF3',
-                travvlyDeepBlue: '#021C54',
-                travvlyGray: '#EFF4FF',
-                travvlyDeepYellow: '#FFD456',
-                travvlyDark: '#555555',
-                travvlyDeeperBlue: '#0A142F',
+                colorLightYellow: '#FFFBEE',
+                colorLintYellow: '#FFF9E9',
+                colorBlue: '#2B6BF3',
+                colorDeepBlue: '#021C54',
+                colorGray: '#EFF4FF',
+                colorDeepYellow: '#FFD456',
+                colorDark: '#555555',
+                colorDeeperBlue: '#0A142F',
             },
             fontFamily: {
                 sora: ['Sen'],
@@ -42,18 +42,15 @@
         <div class="flex items-center justify-between">
             <!-- logo -->
             <div class="pt-2 md:ml-0 -ml-5 mb-2">
-                <img src="./images/springlife-logo.png" class="logos drop-shadow-2xl shadow-[#352e2e]" alt="" width="140px">
+                GreneCare Home
             </div>
             <!-- Menu -->
             <div class="hidden space-x-10 md:flex mr-5">
-                <a href="index.html" class="font-sora text-travvlyDeepYellow font-medium hover:text-travvlyBlue">Home</a>
-                <a href="about.html" class="font-sora text-gray-900 font-medium hover:text-travvlyDeepYellow">About us</a>
-                <a href="services.html" class="font-sora text-gray-900 font-medium hover:text-travvlyDeepYellow">Our Services</a>
-                <a href="facility.html" class="font-sora text-gray-900  font-medium hover:text-travvlyDeepYellow">Facility</a>
-                <a href="contact.html" class="font-sora text-gray-900  font-medium hover:text-travvlyDeepYellow">Contact Us</a>
+                <a asp-controller="HomeController" asp-action="Index" class="font-sora text-colorDeepYellow font-medium hover:text-colorBlue">Home</a>
+                <a asp-controller="HomeController" asp-action="Support" class="font-sora text-gray-900 font-medium hover:text-colorDeepYellow">Support Ticket</a>
             </div>
             <!-- Get started buttom -->
-            <!-- <a class="hidden md:flex bg-travvlyBlue p-3 rounded-lg text-white hover:text-black hover:bg-travvlyDeepYellow text-center w-30" href="signin.html">Get Started</a> -->
+            <!-- <a class="hidden md:flex bg-colorBlue p-3 rounded-lg text-white hover:text-black hover:bg-colorDeepYellow text-center w-30" href="signin.html">Get Started</a> -->
             <button id="menu_btn" class="block mr-8 md:mr-0 hamburger md:hidden focus:outline-none">
                 <span class="hamburger-top"></span>
                 <span class="hamburger-middle"></span>
@@ -62,15 +59,13 @@
         </div>
         <!-- Mobile Menu -->
         <div id="nav_menu" class="absolute hidden flex-col items-center self-end py-8 mt-2 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-2 right-6 drop-shadow-md">
-            <a href="index.html">Home</a>
-            <a href="about.html">About us</a>
-            <a href="facility.html">Facility</a>
-            <a href="services.html">Our Services</a>
-            <a href="contact.html">Contact Us</a>
+            <a asp-controller="HomeController" asp-action="Index">Home</a>
+            <a asp-controller="HomeController" asp-action="Support">SUpport</a>
+
         </div>
      </nav>
 
-        <div class="container">
+        <div class="">
             <div class="pb-3">
                 @RenderBody()
             </div>
