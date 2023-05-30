@@ -1,4 +1,6 @@
-﻿
+﻿@model SupportTicketModel
+
+
 @{
     ViewData["Title"] = "Support Ticket";
 }
@@ -8,20 +10,23 @@
         <div class="block rounded-lg shadow-lg px-6 md:px-12 lg:-mr-14"
              style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px)">
             <h2 class="mt-2 text-3xl font-bold mb-12 text-colorBlue flex justify-center">Message us</h2>
-            <form>
+            <form asp-controller="Home" asp-action="CreateSupportTicket" method="post">
                 <div class="form-group mb-6">
                     <input type="text"
                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                           placeholder="Name" />
+                           placeholder="Name"
+                           asp-for=Name/>
                 </div>
                 <div class="form-group mb-6">
                     <input type="email"
+                           asp-for=Email
                            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                            placeholder="Email address" />
                 </div>
                 <div class="form-group mb-6">
                     <textarea class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                               rows="3"
+                              asp-for=Message
                               placeholder="Message"></textarea>
                 </div>
                 <div class="form-group form-check text-center mb-6">

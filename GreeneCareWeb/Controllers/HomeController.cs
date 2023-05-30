@@ -6,12 +6,12 @@ namespace GreeneCareWeb.Controllers;
 
 public class HomeController : Controller
 {
-    private static List<SupportTicketModel> tickets = new List<SupportTicketModel>();
+    private static List<SupportTicketModel> ticket = new List<SupportTicketModel>();
 
     public IActionResult Index()
     {
        
-        return View();
+        return View(ticket);
     }
 
     public IActionResult Privacy()
@@ -21,7 +21,13 @@ public class HomeController : Controller
 
     public IActionResult Support()
     {
+        var tickets = new SupportTicketModel();
         return View(tickets);
+    }
+
+    public IActionResult CreateSupportTicket(SupportTicketModel supportTicketModel)
+    {
+        return RedirectToAction(nameof(Index));
     }
 }
 
